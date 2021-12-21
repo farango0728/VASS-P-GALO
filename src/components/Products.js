@@ -28,6 +28,7 @@ export default function Products({ addCarrito }) {
             img={capitan}
             description="Comics del Capitan America primera edicion"
             addCarrito={addCarrito}
+            resena="Steve Rogers nació durante la Depresión y creció, convirtiéndose en un joven débil en una familia pobre. Su padre murió cuando él era un niño; su madre, durante la adolescencia de Steve. Horrorizado ante un noticiario que mostraba a los nazis en Europa, Rogers intentó alistarse en el ejército. En cambio, debido a su fragilidad y su malestar, fue rechazado."
           />
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -38,6 +39,7 @@ export default function Products({ addCarrito }) {
             img={ironman}
             description="Comics de Ironman primera edicion"
             addCarrito={addCarrito}
+            resena="Anthony Stark, hijo del industrial Howard Stark, demostró su aptitud mecánica y su genio inventivo a muy temprana edad, metiéndose en un programa de ingeniería eléctrica en el Instituto de Tecnología de Massachusetts a los quince años."
           />
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -48,6 +50,7 @@ export default function Products({ addCarrito }) {
             img={superman}
             description="Comics de Superman primera edicion"
             addCarrito={addCarrito}
+            resena="El superhéroe más reconocido en la cultura pop, Superman ha sido elevado al estado mítico folkhero. El bebé Kal-El llegó a la Tierra desde el planeta moribundo Krypton y fue encontrado por una pareja de granjeros que lo nombró Clark Kent y lo crió como propio. "
           />
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -58,6 +61,7 @@ export default function Products({ addCarrito }) {
             img={batman}
             description="Comics de batman primera edicion"
             addCarrito={addCarrito}
+            resena="Antes de convertirse en el mejor detective del mundo y cuando aún era un niño, el millonario Bruce Wayne vio morir a sus padres durante un asalto. Este asesinato definió su vida y lo impulsó a convertirse en el arma definitiva contra el crimen: Batman"
           />
         </Grid>
       </Grid>

@@ -44,6 +44,7 @@ export default function Product({
   img,
   description,
   addCarrito,
+  resena
 }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
@@ -95,7 +96,7 @@ export default function Product({
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Descripcion</Typography>
+          <Typography paragraph>{resena}</Typography>
         </CardContent>
       </Collapse>
     </Card>
