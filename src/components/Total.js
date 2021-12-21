@@ -20,12 +20,12 @@ const useStyles = makeStyles((theme) =>({
 }))
 
 
-const Total = () => {
+const Total = ({carrito}) => {
   const classes = useStyles()
 
   return(
     <div className={classes.root}>
-      <h5>Total Items: 4</h5>
+      <h5>Total Items: {carrito.length}</h5>
       <h5> {accounting.formatMoney(50)} </h5>
       <Button className={classes.button} variant="contained" color="secondary">
         Check out

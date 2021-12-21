@@ -19,7 +19,7 @@ function FormRow({carrito, deleteCarrito}) {
       {carrito.map((el) => {
         return (
           <Grid item xs={12} sm={12} md={6} lg={4}>
-            <CheckoutCard key={el.id} el={el} deleteCarrito={deleteCarrito}/>
+            <CheckoutCard key={el.id} el={el} deleteCarrito={deleteCarrito} />
           </Grid>
         );
       })}
@@ -44,7 +44,7 @@ export default function CheckoutPage({carrito, deleteCarrito}) {
         </Grid>
         <Grid item xs={12} sm={4} md={3}>
           <Typography align="center" gutterBottom variant="h4">
-            <Total />
+            <Total carrito={carrito}/>
           </Typography>
         </Grid>
       </Grid>

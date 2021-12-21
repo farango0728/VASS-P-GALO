@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Sesion from "./components/Sesion";
 import Home from "./components/Home";
-import { Routes, Route, Link } from "react-router-dom";
+
 
 function App() {
   const [carrito, setCarrito] = useState([]);
@@ -14,7 +14,7 @@ function App() {
     console.log(newCarrito);
     setCarrito([...carrito, newCarrito]);
 
-    console.log(carrito);
+    
   };
 
   const deleteCarrito = (id) => {

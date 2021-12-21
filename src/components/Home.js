@@ -3,11 +3,12 @@ import CheckoutPage from "./CheckoutPage";
 import Navbar from "./Navbar";
 import Products from "./Products";
 import { Routes, Route, Link } from "react-router-dom";
+import { Footer } from "./Footer";
 
 const Home = ({carrito, addCarrito, deleteCarrito, setSesionStatus}) => {
   return (
     <div>
-      <Navbar setSesionStatus={setSesionStatus}/>
+      <Navbar setSesionStatus={setSesionStatus} carrito={carrito}/>
       <Routes>
         <Route path="/" element={<Products addCarrito={addCarrito} />} />
         <Route
@@ -17,6 +18,7 @@ const Home = ({carrito, addCarrito, deleteCarrito, setSesionStatus}) => {
           }
         />
       </Routes>
+      <Footer />
     </div>
   );
 };

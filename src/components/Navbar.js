@@ -16,8 +16,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "7rem"
   },
   AppBar: {
-    backgroundColor: "whitesmoke",
+    backgroundColor: '#3949ab',
     boxShadow: "none",
+    
   },
   grow: {
     flexGrow: 1,
@@ -32,13 +33,18 @@ const useStyles = makeStyles((theme) => ({
     height: "3rem"
   },
 
+  text: {
+    color: 'white',
+    borderColor: 'white'
+  }
+
 }));
 
-export default function Navbar({setSesionStatus}) {
+export default function Navbar({setSesionStatus, carrito}) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} >
       <AppBar position="fixed" className={classes.AppBar}>
         <Toolbar>
           <Link to="/">
@@ -49,20 +55,19 @@ export default function Navbar({setSesionStatus}) {
           
           <div className={classes.grow}></div>
           <Typography variant="h6" color="textPrimary" component="p">
-            Hola
+            
           </Typography>
           <div className={classes.button}>
-            <Button variant="outlined" onClick={() => setSesionStatus(true)}>
+            <Button className={classes.text} variant="outlined" onClick={() => setSesionStatus(true)}>
               <strong>Salir</strong>
             </Button>
             <Link to="/checkout-page">
               <IconButton aria-label='show car items' color="inherit">
-                <Badge badgeContent={2} color="secondary">
-                  <ShoppingCart fontSize='large' color='primary'/>
+                <Badge badgeContent={carrito.length} color="secondary">
+                  <ShoppingCart className={classes.text} fontSize='large' />
                 </Badge>
               </IconButton>
             </Link>
-            
           </div>
         </Toolbar>
       </AppBar>
