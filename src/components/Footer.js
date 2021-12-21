@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, Box, BottomNavigationAction } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
 
   posicion: {
     position: "absolute",
-    width: '100%',
-    bottom: "0"
+    width: "100%",
+    bottom: "0",
   },
 }));
 

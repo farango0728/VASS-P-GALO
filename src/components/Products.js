@@ -3,12 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Product from "./Product";
 import capitan from "../assets/img/capitan.jpg";
-import batman from "../assets/img/batman.jpg"
-import ironman from "../assets/img/ironman.jpg"
-import superman from "../assets/img/superman.jpg"
-import pantera from "../assets/img/pantera.png"
-import linterna from "../assets/img/linterna.jpeg"
-
+import batman from "../assets/img/batman.jpg";
+import ironman from "../assets/img/ironman.jpg";
+import superman from "../assets/img/superman.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,8 +60,6 @@ export default function Products({ addCarrito }) {
             addCarrito={addCarrito}
           />
         </Grid>
-        
-        
       </Grid>
     </div>
   );

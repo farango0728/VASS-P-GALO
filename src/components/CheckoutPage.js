@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import productData from "../product-data";
 import CheckoutCard from "./CheckoutCard";
 import Total from "./Total";
 
@@ -13,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function FormRow({carrito, deleteCarrito}) {
+function FormRow({ carrito, deleteCarrito }) {
   return (
     <>
       {carrito.map((el) => {
@@ -27,9 +26,8 @@ function FormRow({carrito, deleteCarrito}) {
   );
 }
 
-export default function CheckoutPage({carrito, deleteCarrito}) {
+export default function CheckoutPage({ carrito, deleteCarrito }) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
 
   return (
     <div className={classes.root}>
@@ -40,11 +38,11 @@ export default function CheckoutPage({carrito, deleteCarrito}) {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={8} md={9} container>
-          <FormRow carrito={carrito} deleteCarrito={deleteCarrito}/>
+          <FormRow carrito={carrito} deleteCarrito={deleteCarrito} />
         </Grid>
         <Grid item xs={12} sm={4} md={3}>
           <Typography align="center" gutterBottom variant="h4">
-            <Total carrito={carrito}/>
+            <Total carrito={carrito} />
           </Typography>
         </Grid>
       </Grid>

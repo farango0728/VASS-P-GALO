@@ -11,14 +11,12 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { AddShoppingCart} from "@material-ui/icons";
+import { AddShoppingCart } from "@material-ui/icons";
 import accounting from "accounting";
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    
   },
   media: {
     height: 0,
@@ -39,11 +37,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Product({id, name, price, img, description, addCarrito}) {
+export default function Product({
+  id,
+  name,
+  price,
+  img,
+  description,
+  addCarrito,
+}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-
-  
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -51,14 +54,12 @@ export default function Product({id, name, price, img, description, addCarrito})
 
   const agregarItem = () => {
     addCarrito({
-      id:id,
+      id: id,
       name: name,
       img: img,
-      price: price
-
-    })
-
-  }
+      price: price,
+    });
+  };
 
   return (
     <Card className={classes.root}>
@@ -81,7 +82,6 @@ export default function Product({id, name, price, img, description, addCarrito})
         <IconButton aria-label="Add to card" onClick={agregarItem}>
           <AddShoppingCart fontSize="large" />
         </IconButton>
-        
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,

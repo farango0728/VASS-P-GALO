@@ -2,13 +2,13 @@ import React from "react";
 import CheckoutPage from "./CheckoutPage";
 import Navbar from "./Navbar";
 import Products from "./Products";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Footer } from "./Footer";
 
-const Home = ({carrito, addCarrito, deleteCarrito, setSesionStatus}) => {
+const Home = ({ carrito, addCarrito, deleteCarrito, setSesionStatus }) => {
   return (
     <div>
-      <Navbar setSesionStatus={setSesionStatus} carrito={carrito}/>
+      <Navbar setSesionStatus={setSesionStatus} carrito={carrito} />
       <Routes>
         <Route path="/" element={<Products addCarrito={addCarrito} />} />
         <Route

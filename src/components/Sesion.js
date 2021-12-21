@@ -6,14 +6,12 @@ import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useState } from "react";
-import Image from "../assets/img/capitan.jpg"
 
 function Copyright() {
   return (
@@ -46,8 +44,6 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
-
-  
 }));
 
 export default function Sesion({ setSesionStatus }) {
@@ -58,24 +54,22 @@ export default function Sesion({ setSesionStatus }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (nombre == name && contra == password) {
+    if (nombre === name && contra === password) {
       setSesionStatus(false);
     } else {
-      console.log('contraseña invalida')
+      console.log("contraseña invalida");
     }
   };
 
-  let name = "luisjose";
-  let password = "luisjose101010";
+  let name = "demo1";
+  let password = "demo1";
 
   const setName = (e) => {
     setNombre(e.target.value);
-    
   };
 
   const setContra = (e) => {
     setPassword(e.target.value);
-    
   };
 
   return (
