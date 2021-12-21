@@ -1,17 +1,40 @@
 import "./App.css";
-import CheckoutPage from "./components/CheckoutPage";
-import Navbar from "./components/Navbar";
-import Products from "./components/Products";
+import { useState } from "react";
+import Sesion from "./components/Sesion";
+import Home from "./components/Home";
 import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
+  const [carrito, setCarrito] = useState([]);
+
+  const [sesionStatus, setSesionStatus] = useState(true);
+
+  const addCarrito = (el) => {
+    let newCarrito = el;
+    console.log(newCarrito);
+    setCarrito([...carrito, newCarrito]);
+
+    console.log(carrito);
+  };
+
+  const deleteCarrito = (id) => {
+    console.log(id);
+    let newDataCarrito = carrito.filter((el) => el.id !== id);
+    setCarrito(newDataCarrito);
+  };
+
   return (
     <div className="App">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Products />}/>
-        <Route path="/checkout-page" element={<CheckoutPage />}/>
-      </Routes>
+      {sesionStatus ? (
+        <Sesion setSesionStatus={setSesionStatus} />
+      ) : (
+        <Home
+          carrito={carrito}
+          deleteCarrito={deleteCarrito}
+          addCarrito={addCarrito}
+          setSesionStatus={setSesionStatus}
+        />
+      )}
     </div>
   );
 }

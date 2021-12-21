@@ -11,8 +11,9 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { AddShoppingCart, Autorenew } from "@material-ui/icons";
+import { AddShoppingCart} from "@material-ui/icons";
 import accounting from "accounting";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     height: 0,
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "90.25%", // 16:9
   },
   expand: {
     transform: "rotate(0deg)",
@@ -37,40 +38,49 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Product({el}) {
+export default function Product({id, name, price, img, description, addCarrito}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+
+  
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const agregarItem = () => {
+    addCarrito({
+      id:id,
+      name: name,
+      img: img,
+      price: price
+
+    })
+
+  }
 
   return (
     <Card className={classes.root}>
       <CardHeader
         action={
           <Typography aria-label="settings" variant="h5" color="textSecondary">
-            {accounting.formatMoney(el.price)}
+            {accounting.formatMoney(price)}
           </Typography>
         }
-        title={el.name}
+        title={name}
         subheader="Disponible"
       />
-      <CardMedia className={classes.media} image={el.img} title="Paella dish" />
+      <CardMedia className={classes.media} image={img} title="Paella dish" />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          {el.description}
+          {description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="Add to card">
+        <IconButton aria-label="Add to card" onClick={agregarItem}>
           <AddShoppingCart fontSize="large" />
         </IconButton>
-        {Array(el.rating)
-          .fill()
-          .map((_, i) => (
-            <p>&#11088;</p>
-          ))}
+        
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,

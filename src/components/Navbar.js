@@ -29,12 +29,12 @@ const useStyles = makeStyles((theme) => ({
 
   image: {
     marginRight: "10px",
-    height: "2.5rem"
+    height: "3rem"
   },
 
 }));
 
-export default function ButtonAppBar() {
+export default function Navbar({setSesionStatus}) {
   const classes = useStyles();
 
   return (
@@ -49,11 +49,11 @@ export default function ButtonAppBar() {
           
           <div className={classes.grow}></div>
           <Typography variant="h6" color="textPrimary" component="p">
-            Hello guest
+            Hola
           </Typography>
           <div className={classes.button}>
-            <Button variant="outlined">
-              <strong>Sign In</strong>
+            <Button variant="outlined" onClick={() => setSesionStatus(true)}>
+              <strong>Salir</strong>
             </Button>
             <Link to="/checkout-page">
               <IconButton aria-label='show car items' color="inherit">

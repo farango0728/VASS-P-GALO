@@ -13,13 +13,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function FormRow() {
+function FormRow({carrito, deleteCarrito}) {
   return (
     <>
-      {productData.map((el) => {
+      {carrito.map((el) => {
         return (
           <Grid item xs={12} sm={12} md={6} lg={4}>
-            <CheckoutCard key={el.id} el={el} />
+            <CheckoutCard key={el.id} el={el} deleteCarrito={deleteCarrito}/>
           </Grid>
         );
       })}
@@ -27,7 +27,7 @@ function FormRow() {
   );
 }
 
-export default function CheckoutPage() {
+export default function CheckoutPage({carrito, deleteCarrito}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -40,7 +40,7 @@ export default function CheckoutPage() {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={8} md={9} container>
-          <FormRow />
+          <FormRow carrito={carrito} deleteCarrito={deleteCarrito}/>
         </Grid>
         <Grid item xs={12} sm={4} md={3}>
           <Typography align="center" gutterBottom variant="h4">

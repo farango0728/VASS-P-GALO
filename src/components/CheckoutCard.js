@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
  
 }));
 
-export default function CheckoutCard({ el }) {
+export default function CheckoutCard({ el, deleteCarrito }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -53,14 +53,8 @@ export default function CheckoutCard({ el }) {
       <CardMedia className={classes.media} image={el.img} title="Paella dish" />
 
       <CardActions disableSpacing className={classes.cardActions}>
-        <div className={classes.cardRating}>
-          {Array(el.rating)
-            .fill()
-            .map((_, i) => (
-              <p>&#11088;</p>
-            ))}
-        </div>
-        <IconButton>
+        
+        <IconButton onClick={(e) => deleteCarrito(el.id)}>
           <DeleteIcon fontSize="large" />
         </IconButton>
       </CardActions>
